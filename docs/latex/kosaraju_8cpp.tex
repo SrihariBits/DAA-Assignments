@@ -1,0 +1,68 @@
+\hypertarget{kosaraju_8cpp}{}\doxysection{/mnt/\+S\+T\+A\+S\+H/@R\+I\+K\+I\+L/\+\_\+\+Projects/@programming/@Acad/\+D\+A\+A/src/kosaraju.cpp File Reference}
+\label{kosaraju_8cpp}\index{/mnt/STASH/"@RIKIL/\_Projects/"@programming/"@Acad/DAA/src/kosaraju.cpp@{/mnt/STASH/"@RIKIL/\_Projects/"@programming/"@Acad/DAA/src/kosaraju.cpp}}
+
+
+This file contains the implementation for kosaraju\textquotesingle{}s algorithm.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnode}{node}}
+\begin{DoxyCompactList}\small\item\em store the edge lists of the input graphs \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_graph}{Graph}}
+\begin{DoxyCompactList}\small\item\em This class contains the input graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kosaraju_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em main function to start the algorithm, takes file path as command line argument \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \mbox{\hyperlink{kosaraju_8cpp_a11b258169d1b950c545b8d446ca07990}{v\+\_\+count}}
+\item 
+unsigned long long \mbox{\hyperlink{kosaraju_8cpp_ad2d9ad15a9a331194bc5f982e4fc0edf}{e\+\_\+count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation for kosaraju\textquotesingle{}s algorithm. 
+
+A strongly connected component (S\+CC) of a directed graph is a maximal strongly connected subgraph. We can find all strongly connected components in O(V+E) time using Kosaraju’s algorithm. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kosaraju_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{kosaraju_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{kosaraju.cpp@{kosaraju.cpp}!main@{main}}
+\index{main@{main}!kosaraju.cpp@{kosaraju.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+main function to start the algorithm, takes file path as command line argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & no of command line arguments \\
+\hline
+{\em argv} & list of command line arguments \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{kosaraju_8cpp_ad2d9ad15a9a331194bc5f982e4fc0edf}\label{kosaraju_8cpp_ad2d9ad15a9a331194bc5f982e4fc0edf}} 
+\index{kosaraju.cpp@{kosaraju.cpp}!e\_count@{e\_count}}
+\index{e\_count@{e\_count}!kosaraju.cpp@{kosaraju.cpp}}
+\doxysubsubsection{\texorpdfstring{e\_count}{e\_count}}
+{\footnotesize\ttfamily unsigned long long e\+\_\+count}
+
+Edge count \mbox{\Hypertarget{kosaraju_8cpp_a11b258169d1b950c545b8d446ca07990}\label{kosaraju_8cpp_a11b258169d1b950c545b8d446ca07990}} 
+\index{kosaraju.cpp@{kosaraju.cpp}!v\_count@{v\_count}}
+\index{v\_count@{v\_count}!kosaraju.cpp@{kosaraju.cpp}}
+\doxysubsubsection{\texorpdfstring{v\_count}{v\_count}}
+{\footnotesize\ttfamily unsigned long long v\+\_\+count}
+
+Vertex count 

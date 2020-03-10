@@ -1,0 +1,53 @@
+\hypertarget{index_Project-Details}{}\doxysection{Project-\/\+Details}\label{index_Project-Details}
+This Project deals with finding out connected components from the input data-\/graphs. ~\newline
+ {\bfseries{How it works}}~\newline
+ The first algorithm is kosaraju\textquotesingle{}s algorithm which performs 2 graph traversals\+: ~\newline
+ Step 1\+: Perform direct dfs from any node and push node to stack {\itshape after{\itshape  dfs finishes on that node ~\newline
+ Step 2\+: Perform dfs node present on top of stack, then pop it. each dfs results in a Strongly Connected Component(\+S\+C\+C) ~\newline
+}}
+
+{\itshape {\itshape \DoxyHorRuler{0}
+ compile with {\itshape g++ $\ast$.cpp} ~\newline
+ \href{../Performance_Documentation/index.html}{\texttt{ $>$$>$$>$Link to performance report$<$$<$$<$ }} \DoxyHorRuler{0}
+}}
+
+{\itshape {\itshape }}\hypertarget{index_Definitions}{}\doxysubsection{Definitions}\label{index_Definitions}
+{\itshape {\itshape {\bfseries{ S\+CC }}\+: Strongly Connected Component ~\newline
+ {\bfseries{ D\+C\+SC }}\+: Divide and Conquer Strong Components ~\newline
+ {\bfseries{ P\+R\+ED }}\+: Predecessors -\/ set of nodes through which we can reach the current node ~\newline
+ {\bfseries{ D\+E\+SC }}\+: Descendants -\/ set of nodes we can reach starting from the current node ~\newline
+}}
+
+{\itshape {\itshape }}\hypertarget{index_Input}{}\doxysubsection{Input}\label{index_Input}
+{\itshape {\itshape  Input is given as follows\+:~\newline
+
+\begin{DoxyItemize}
+\item input can be given through file as command line argument
+\item if command line args is not given, input can be given through stdin/console
+\end{DoxyItemize}}}
+
+{\itshape {\itshape }}\hypertarget{index_Output}{}\doxysubsection{Output}\label{index_Output}
+{\itshape {\itshape 
+\begin{DoxyItemize}
+\item all the strongly connected components are printed in a single line
+\end{DoxyItemize}}}
+
+{\itshape {\itshape }}\hypertarget{index_Assumptions}{}\doxysubsection{Assumptions}\label{index_Assumptions}
+{\itshape {\itshape }}
+
+{\itshape {\itshape }}\hypertarget{index_Limitations}{}\doxysubsection{Limitations}\label{index_Limitations}
+{\itshape {\itshape }}
+
+{\itshape {\itshape \DoxyHorRuler{0}
+ }}\hypertarget{index_Team}{}\doxysubsection{Team}\label{index_Team}
+{\itshape {\itshape This project is done by\+:
+\begin{DoxyItemize}
+\item L Srihari (2017A7\+P\+S1670H)
+\item Rikil Gajarla (2017A7\+P\+S0202H)
+\item Naga Sai Bharath (2017A7\+P\+S0209H)
+\end{DoxyItemize}}}
+
+{\itshape {\itshape Raj Kashyap Mallala (2017A7\+P\+S0025H)}}
+
+{\itshape {\itshape \DoxyHorRuler{0}
+ }}

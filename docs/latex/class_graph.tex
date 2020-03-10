@@ -1,0 +1,151 @@
+\hypertarget{class_graph}{}\doxysection{Graph Class Reference}
+\label{class_graph}\index{Graph@{Graph}}
+
+
+This class contains the input graph.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_a7b14c9bc0b5fbf50165aaf92f4aeef1d}{Graph}} (int n)
+\begin{DoxyCompactList}\small\item\em Constructor for the graph class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a191ca4dbc2ae67e4c289ffeeb1a300d4}{dfs}} (int v, vector$<$ vector$<$ int $>$$>$ \&edge\+List, set$<$ int $>$ \&Set)
+\begin{DoxyCompactList}\small\item\em dfs(depth-\/first-\/search) function to traverse the graph recursively \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_graph_a7b14c9bc0b5fbf50165aaf92f4aeef1d}\label{class_graph_a7b14c9bc0b5fbf50165aaf92f4aeef1d}} 
+{\bfseries Graph} (int n)
+\item 
+\mbox{\Hypertarget{class_graph_a079f41028da259b3b4320a42c90ad8bf}\label{class_graph_a079f41028da259b3b4320a42c90ad8bf}} 
+void {\bfseries D\+F\+S\+\_\+1} (long long v)
+\item 
+\mbox{\Hypertarget{class_graph_a7b0965162d101240111fd0eb67417ec5}\label{class_graph_a7b0965162d101240111fd0eb67417ec5}} 
+void {\bfseries D\+F\+S\+\_\+2} (long long v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ vector$<$ int $>$ $>$ \mbox{\hyperlink{class_graph_a7c7c89cf5b0ca79aa169ff0444b82762}{original}}
+\item 
+vector$<$ vector$<$ int $>$ $>$ \mbox{\hyperlink{class_graph_aeed0101eff6859021c059f37131d2e3a}{transpose}}
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{class_graph_aa95450e1dedd798d0bdbb4012d938227}{visited}}
+\item 
+int \mbox{\hyperlink{class_graph_a625619977a4627e17b067851c43f1ec5}{no\+\_\+of\+\_\+v}}
+\item 
+\mbox{\Hypertarget{class_graph_a7df4ebd9703cd930d7418fbe47c93e36}\label{class_graph_a7df4ebd9703cd930d7418fbe47c93e36}} 
+vector$<$ bool $>$ {\bfseries valid}
+\item 
+vector$<$ \mbox{\hyperlink{structnode}{node}} $>$ \mbox{\hyperlink{class_graph_a144db14062017982603d41af23d36123}{graph}}
+\item 
+stack$<$ unsigned long long $>$ \mbox{\hyperlink{class_graph_a8ea5c6950e1a88333f2036ba02d9a23b}{Stack}}
+\item 
+vector$<$ vector$<$ unsigned long long $>$ $>$ \mbox{\hyperlink{class_graph_a5f7629e24e450d9eb39533d1f486352a}{components}}
+\item 
+unsigned long long \mbox{\hyperlink{class_graph_a4f7eb042c73d42e95c768ad8d7903941}{no\+\_\+of\+\_\+components}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class contains the input graph. 
+
+Class to represent the input graph.
+
+This class is can be used to store both the original graph and the transpose graph 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graph_a7b14c9bc0b5fbf50165aaf92f4aeef1d}\label{class_graph_a7b14c9bc0b5fbf50165aaf92f4aeef1d}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the graph class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & number of nodes in graph \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_a191ca4dbc2ae67e4c289ffeeb1a300d4}\label{class_graph_a191ca4dbc2ae67e4c289ffeeb1a300d4}} 
+\index{Graph@{Graph}!dfs@{dfs}}
+\index{dfs@{dfs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dfs()}{dfs()}}
+{\footnotesize\ttfamily void Graph\+::dfs (\begin{DoxyParamCaption}\item[{int}]{v,  }\item[{vector$<$ vector$<$ int $>$$>$ \&}]{edge\+List,  }\item[{set$<$ int $>$ \&}]{Set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+dfs(depth-\/first-\/search) function to traverse the graph recursively 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & node/vertex number to traverse from \\
+\hline
+{\em edge\+List} & edge list of graph \\
+\hline
+{\em Set} & set of connected nodes (P\+R\+ED or D\+E\+SC) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graph_a5f7629e24e450d9eb39533d1f486352a}\label{class_graph_a5f7629e24e450d9eb39533d1f486352a}} 
+\index{Graph@{Graph}!components@{components}}
+\index{components@{components}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily vector$<$vector$<$unsigned long long$>$ $>$ Graph\+::components}
+
+List of detected components \mbox{\Hypertarget{class_graph_a144db14062017982603d41af23d36123}\label{class_graph_a144db14062017982603d41af23d36123}} 
+\index{Graph@{Graph}!graph@{graph}}
+\index{graph@{graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{graph}{graph}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{structnode}{node}}$>$ Graph\+::graph}
+
+Struct of edge lists with max 10$^\wedge$7 nodes \mbox{\Hypertarget{class_graph_a4f7eb042c73d42e95c768ad8d7903941}\label{class_graph_a4f7eb042c73d42e95c768ad8d7903941}} 
+\index{Graph@{Graph}!no\_of\_components@{no\_of\_components}}
+\index{no\_of\_components@{no\_of\_components}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{no\_of\_components}{no\_of\_components}}
+{\footnotesize\ttfamily unsigned long long Graph\+::no\+\_\+of\+\_\+components}
+
+No of components found \mbox{\Hypertarget{class_graph_a625619977a4627e17b067851c43f1ec5}\label{class_graph_a625619977a4627e17b067851c43f1ec5}} 
+\index{Graph@{Graph}!no\_of\_v@{no\_of\_v}}
+\index{no\_of\_v@{no\_of\_v}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{no\_of\_v}{no\_of\_v}}
+{\footnotesize\ttfamily int Graph\+::no\+\_\+of\+\_\+v}
+
+number of vertices in graph \mbox{\Hypertarget{class_graph_a7c7c89cf5b0ca79aa169ff0444b82762}\label{class_graph_a7c7c89cf5b0ca79aa169ff0444b82762}} 
+\index{Graph@{Graph}!original@{original}}
+\index{original@{original}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{original}{original}}
+{\footnotesize\ttfamily vector$<$vector$<$int$>$ $>$ Graph\+::original}
+
+vector representing the original connected nodes of graph \mbox{\Hypertarget{class_graph_a8ea5c6950e1a88333f2036ba02d9a23b}\label{class_graph_a8ea5c6950e1a88333f2036ba02d9a23b}} 
+\index{Graph@{Graph}!Stack@{Stack}}
+\index{Stack@{Stack}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Stack}{Stack}}
+{\footnotesize\ttfamily stack$<$unsigned long long$>$ Graph\+::\+Stack}
+
+Stack to keep track for nodes \mbox{\Hypertarget{class_graph_aeed0101eff6859021c059f37131d2e3a}\label{class_graph_aeed0101eff6859021c059f37131d2e3a}} 
+\index{Graph@{Graph}!transpose@{transpose}}
+\index{transpose@{transpose}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{transpose}{transpose}}
+{\footnotesize\ttfamily vector$<$vector$<$int$>$ $>$ Graph\+::transpose}
+
+vector representing connected nodes of transpose graph \mbox{\Hypertarget{class_graph_aa95450e1dedd798d0bdbb4012d938227}\label{class_graph_aa95450e1dedd798d0bdbb4012d938227}} 
+\index{Graph@{Graph}!visited@{visited}}
+\index{visited@{visited}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{visited}{visited}}
+{\footnotesize\ttfamily vector$<$ bool $>$ Graph\+::visited}
+
+visited array to keep track of traversed nodes
+
+Visited array for dfs 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/\+S\+T\+A\+S\+H/@\+R\+I\+K\+I\+L/\+\_\+\+Projects/@programming/@\+Acad/\+D\+A\+A/src/\mbox{\hyperlink{dcsc_8cpp}{dcsc.\+cpp}}\item 
+/mnt/\+S\+T\+A\+S\+H/@\+R\+I\+K\+I\+L/\+\_\+\+Projects/@programming/@\+Acad/\+D\+A\+A/src/\mbox{\hyperlink{kosaraju_8cpp}{kosaraju.\+cpp}}\end{DoxyCompactItemize}
