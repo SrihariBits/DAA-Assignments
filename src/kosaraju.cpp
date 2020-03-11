@@ -97,6 +97,11 @@ int main(int argc, char *argv[])
 	Graph G(v_count);
 
 	unsigned long long index=-1;
+	ofstream myfile1("./../gephi/kosaraju_edge.csv");
+	if(myfile1.is_open())
+	{
+		myfile1 << "Source; Target; Type\n";
+	}
 	//file handling -- must be a list of edges, 2 vertices per line
     if(argc == 2)
     {
@@ -107,7 +112,7 @@ int main(int argc, char *argv[])
         unsigned long long vertex_a,vertex_b;
         while (fin) {
             getline(fin, line);
-            ss << line;
+            ss << line <<"\n";
             ss >> vertex_a >> vertex_b;
 			if(Map.find(vertex_a)==Map.end())
 			{
@@ -119,7 +124,12 @@ int main(int argc, char *argv[])
 			}
             G.graph[Map[vertex_a]].original.push_back(Map[vertex_b]);
             G.graph[Map[vertex_b]].transpose.push_back(Map[vertex_a]);
-        } 
+			if(myfile1.is_open())
+			{
+				myfile1 << Map[vertex_a] << ";" << Map[vertex_b] <<"; directed\n";
+			}
+        }
+		myfile1.close();
         fin.close();
     }
     else
@@ -164,22 +174,35 @@ int main(int argc, char *argv[])
 			++G.no_of_components;
 		}
 	}
-	cout<<"Number of components: "<<G.no_of_components<<"\n";
+	ofstream outFile;
+	system("read -p 'Press Enter to continue...' var");
+	//cout<<"Number of components: "<<G.no_of_components<<"\n";
 	for(unsigned long long i=0;i<G.no_of_components;++i)
 	{
-		cout<<"Component no. "<<i+1<<"\n";
+		//cout<<"Component no. "<<i+1<<"\n";
+		if(i%100==0)
+		{
+			outFile.open("./../gephi/kosaraju_node"+to_string(i/100)+".csv");
+			outFile<< "Id; intervalset\n";
+		}
 		for(auto itr:G.components[i])
 		{
 			for(auto it:Map)
 			{
 				if(it.second==itr)
 				{
-					cout<<it.first<<" ";
+					//cout<<it.first<<" ";
+					if (outFile.is_open())
+					{
+						outFile << itr << ";" << i <<"\n";
+					}
 					break;
 				}
 			}
 		}
-		cout<<"\n";
+		if(i%100==99)
+			outFile.close();
+		//cout<<"\n";
 	}
     return 0;
 }
