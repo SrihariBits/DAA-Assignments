@@ -176,33 +176,38 @@ int main(int argc, char *argv[])
 	}
 	ofstream outFile;
 	system("read -p 'Press Enter to continue...' var");
-	//cout<<"Number of components: "<<G.no_of_components<<"\n";
+	cout<<"Number of components: "<<G.no_of_components<<"\n";
+	long long timestamp=0;
 	for(unsigned long long i=0;i<G.no_of_components;++i)
 	{
-		//cout<<"Component no. "<<i+1<<"\n";
-		if(i%100==0)
+		if(G.components[i].size()>1)
 		{
-			outFile.open("./../gephi/kosaraju_node"+to_string(i/100)+".csv");
-			outFile<< "Id; intervalset\n";
-		}
-		for(auto itr:G.components[i])
-		{
-			for(auto it:Map)
+			cout<<"Component no. "<<i+1<<"\n";
+			if(timestamp%100==0)
 			{
-				if(it.second==itr)
+				outFile.open("./../gephi/kosaraju_node"+to_string(timestamp/100)+".csv");
+				outFile<< "Id; intervalset\n";
+			}
+			for(auto itr:G.components[i])
+			{
+				for(auto it:Map)
 				{
-					//cout<<it.first<<" ";
-					if (outFile.is_open())
+					if(it.second==itr)
 					{
-						outFile << itr << ";" << i <<"\n";
+						cout<<it.first<<" ";
+						if (outFile.is_open())
+						{
+							outFile << itr << ";" << timestamp <<"\n";
+						}
+						break;
 					}
-					break;
 				}
 			}
+			if(timestamp%100==99)
+				outFile.close();
+			++timestamp;
+			cout<<"\n";
 		}
-		if(i%100==99)
-			outFile.close();
-		//cout<<"\n";
 	}
     return 0;
 }
