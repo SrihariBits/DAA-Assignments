@@ -233,6 +233,7 @@ int main(int argc, char *argv[])
             int vertex_a,vertex_b;
         while (fin) {
             getline(fin, line);
+			ss << line <<"\n";
             ss >> vertex_a >> vertex_b;
 			if(Map.find(vertex_a)==Map.end())
 			{
