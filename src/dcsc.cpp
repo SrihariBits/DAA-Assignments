@@ -10,8 +10,8 @@
 
 using namespace std;
 
-int v_count; /**< vertices count */
-int e_count; /**< edges count */
+int v_count; /**< Vertices count */
+int e_count; /**< Edges count */
 map<unsigned long long,unsigned long long> Map; /**< Map of vertex to its index */
 /**
  * \class Graph
@@ -22,15 +22,15 @@ map<unsigned long long,unsigned long long> Map; /**< Map of vertex to its index 
 class Graph
 {
     public:
-		vector<vector<int>> original;	/**< vector representing the original connected nodes of graph */
-		vector<vector<int>> transpose;	/**< vector representing connected nodes of transpose graph */
-		vector<bool> visited;	/**< visited array to keep track of traversed nodes */
-		int no_of_v;	/**< number of vertices in graph */
+		vector<vector<int>> original;	/**< Vector representing the original connected nodes of graph */
+		vector<vector<int>> transpose;	/**< Vector representing connected nodes of transpose graph */
+		vector<bool> visited;	/**< Visited array to keep track of traversed nodes */
+		int no_of_v;	/**< Number of vertices in graph */
 		vector<bool> valid;
 
 		/**
 		 * \brief Constructor for the graph class
-		 * \param n number of nodes in graph
+		 * \param n Number of nodes in graph
 		 */
 		Graph(int n)
 		{
@@ -41,10 +41,10 @@ class Graph
 		}
 
 		/**
-		 * \brief dfs(depth-first-search) function to traverse the graph recursively
-		 * \param v node/vertex number to traverse from
-		 * \param edgeList edge list of graph
-		 * \param Set set of connected nodes (PRED or DESC)
+		 * \brief dfs(depth-first-search) Function to traverse the graph recursively
+		 * \param v Node/vertex number to traverse from
+		 * \param edgeList Edge list of graph
+		 * \param Set Set of connected nodes (PRED or DESC)
 		 */
 		void dfs(int v,vector<vector<int>>& edgeList,set<int>& Set)
 		{
@@ -59,6 +59,13 @@ class Graph
 		}
 };
 
+/**
+ * \brief DCSC(Divide and Conquer Strong Components) Function to find the strongly connected components using a divide and conquer approach
+ * \param G Object of Graph class
+ *
+ * This function first selects a random vertex and perform a dfs to find PRED and DESC set of the selected node. Then it recurses 
+ * on each of PRED, DESC and REM components. It outputs the SCCs in corresponding set.
+ */
 void DCSC(Graph G)
 {
 	bool flag;
@@ -98,7 +105,6 @@ void DCSC(Graph G)
 		return;
 	}
 	
-	//Random vertex - Not working (will fix)
 	srand(time(0));
 	unsigned long long k;
 	if(G.no_of_v==0) k=0;

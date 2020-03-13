@@ -11,13 +11,13 @@
 using namespace std;
 
 /**
- * \struct node
- * \brief store the edge lists of the input graphs
+ * \struct Node
+ * \brief Store the edge lists of the input graphs
  */
 struct node
 {
-    vector<unsigned long long> original; /**< actual edge list for this node*/
-	vector<unsigned long long> transpose; /**< reversed edge list for this node*/
+    vector<unsigned long long> original; /**< Actual edge list for this node*/
+	vector<unsigned long long> transpose; /**< Reversed edge list for this node*/
 };
 
 unsigned long long  v_count, /**< Vertex count */
@@ -78,9 +78,9 @@ class Graph
 		}
 };
 
-//325729 1497134
-//875713 5105039
-//1632803 30622564
+// 325729 1497134
+// 875713 5105039
+// 1632803 30622564
 // 4038 88235
 /**
  * \brief main function to start the algorithm, takes file path as command line argument
@@ -132,6 +132,7 @@ int main(int argc, char *argv[])
 		myfile1.close();
         fin.close();
     }
+	// input from terminal if file is not given in arguments
     else
     {
         for(unsigned long long i=0;i<e_count;++i)
@@ -148,9 +149,14 @@ int main(int argc, char *argv[])
 			}
             G.graph[Map[vertex_a]].original.push_back(Map[vertex_b]);
             G.graph[Map[vertex_b]].transpose.push_back(Map[vertex_a]);
+			if(myfile1.is_open())
+			{
+				myfile1 << Map[vertex_a] << ";" << Map[vertex_b] <<"; directed\n";
+			}
         }
+		myfile1.close();
     }
-	
+	// first dfs for kosaraju
 	for(unsigned long long i=0;i<v_count;++i)
 	{
 		if(!G.visited[i])
@@ -158,12 +164,12 @@ int main(int argc, char *argv[])
 			G.DFS_1(i);
 		}
 	}
-	
+	// re-init the visited array to false
 	for(unsigned long long i=0;i<v_count;++i)
 	{
 		G.visited[i]=false;
 	}
-	
+	// second dfs for inverse graph
 	while(!G.Stack.empty())
 	{
 		unsigned long long v=G.Stack.top();
@@ -174,13 +180,14 @@ int main(int argc, char *argv[])
 			++G.no_of_components;
 		}
 	}
-	ofstream outFile;
+	ofstream outFile; // output file to store components (Nodes)
 	system("read -p 'Press Enter to continue...' var");
 	cout<<"Number of components: "<<G.no_of_components<<"\n";
 	long long timestamp=0;
+	// start printing each component to shell & file
 	for(unsigned long long i=0;i<G.no_of_components;++i)
 	{
-		if(G.components[i].size()>1)
+		if(G.components[i].size()>30 && G.components[i].size()<500) //-----------------------
 		{
 			cout<<"Component no. "<<i+1<<"\n";
 			if(timestamp%100==0)
