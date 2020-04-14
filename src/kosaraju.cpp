@@ -181,13 +181,13 @@ int main(int argc, char *argv[])
 		}
 	}
 	ofstream outFile; // output file to store components (Nodes)
-	system("read -p 'Press Enter to continue...' var");
+	system("pause");
 	cout<<"Number of components: "<<G.no_of_components<<"\n";
 	long long timestamp=0;
 	// start printing each component to shell & file
 	for(unsigned long long i=0;i<G.no_of_components;++i)
 	{
-		if(G.components[i].size()>30 && G.components[i].size()<500) //-----------------------
+		if(G.components[i].size()>=1) //-----------------------
 		{
 			cout<<"Component no. "<<i+1<<"\n";
 			if(timestamp%100==0)
