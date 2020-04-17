@@ -31,6 +31,8 @@ struct node
 unsigned long long  v_count, /**< Vertex count */
                     e_count; /**< Edge count */
 
+vector<int>partA,partB;
+
 map<unsigned long long,unsigned long long> Map; /**< Map of vertex to its index */
 /**
  * \class Graph
@@ -252,6 +254,29 @@ void Max_Flow(Graph& original,Graph& residual,int src,int dest)
 	}
 }
 
+unordered_map<int,bool> visited;
+
+void minCut(Graph& residual,int current)
+{
+    cout<<"minCut function enteree current is"<<" ";
+    cout<<current<<endl;
+    visited[current]=true;
+    vector<pair<int,int>> forwards=residual.vertex[current].capacity;
+    vector<pair<int,int>> backwards=residual.vertex[current].flow;
+    for(int i=0;i<forwards.size();i++)
+    {
+        if(!visited[forwards[i].first])
+            minCut(residual,forwards[i].first);
+    }
+
+    for(int i=0;i<backwards.size();i++)
+    {
+        if(!visited[backwards[i].first])
+            minCut(residual,backwards[i].first);
+    }
+    
+}
+
 /**
  * \brief main function to start the algorithm, takes file path as command line argument
  * \param argc no of command line arguments
@@ -348,6 +373,34 @@ int main(int argc, char *argv[])
 		}
 		
 		Max_Flow(original,residual,src,dest);
+        for(int i=0;i<v_count;i++)
+            visited[i]=false;
+        minCut(residual,src);
+        cout<<"minCut function exited"<<endl;
+        for(int i=0;i<v_count;i++)
+        {
+            cout<<"visited["<<i<<"] :"<<visited[i]<<endl;
+            auto it=Map.begin();
+            while(it!=Map.end())
+            {
+                if(it->second==i)
+                {
+                    if(visited[i]==true)
+                        partA.push_back(it->first);
+                    else
+                        partB.push_back(it->first);
+                }
+                it++;
+            }
+        }
+        cout<<"mincut partA"<<endl;
+        for(int x:partA)
+            cout<<x<<" ";
+        cout<<endl;
+        cout<<"mincut partB"<<endl;
+        for(int x:partB)
+            cout<<x<<" ";
+        cout<<endl;
 		int max_flow=0;
 		for(auto v:original.vertex[src].flow) // Sum all outgoing edges from source in final graph for max_flow
 		{
