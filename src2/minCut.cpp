@@ -265,13 +265,13 @@ void minCut(Graph& residual,int current)
     vector<pair<int,int>> backwards=residual.vertex[current].flow;
     for(int i=0;i<forwards.size();i++)
     {
-        if(!visited[forwards[i].first])
+        if(!visited[forwards[i].first] && forwards[i].second>0)
             minCut(residual,forwards[i].first);
     }
 
     for(int i=0;i<backwards.size();i++)
     {
-        if(!visited[backwards[i].first])
+        if(!visited[backwards[i].first] && backwards[i].second>0)
             minCut(residual,backwards[i].first);
     }
     
