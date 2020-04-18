@@ -1,6 +1,6 @@
 /**
- * \file FordFulkerson.cpp
- * \brief This file contains the implementation for Ford fulkerson's algorithm for maximum network flow
+ * \file minCut.cpp
+ * \brief This file contains the implementation for finding mincut of a directed graph
  * 
  * 
  */
@@ -8,8 +8,8 @@
 #include<bits/stdc++.h>
 #include "FordFulkerson.h"
 using namespace std;
-vector<int> partA,partB;
-unordered_map<int,bool> visited;
+vector<int> partA,partB;	//Two vectors to store the vertices partitioned into two sets for mincut
+unordered_map<int,bool> visited;	//used in function minCut for knowing which vertices are visited already and which are not
 /**
  * \brief does dfs to find the all the nodes which are reachable from source
  * \param residual Graph after Ford Fulkerson Algorith is completed, current vertex index at which dfs is running
@@ -158,13 +158,6 @@ int main(int argc, char *argv[])
         for(int x:partB)
             cout<<x<<" ";
         cout<<endl;
-		int max_flow=0;
-		for(auto v:original.vertex[src].flow) // Sum all outgoing edges from source in final graph for max_flow
-		{
-			cout<<v.second<<" ";
-			max_flow+=v.second;
-		}
-		cout<<"\nMAX FLOW :"<<max_flow;
     }
     return 0;
 }
