@@ -224,55 +224,35 @@ void Max_Flow(Graph& original,Graph& residual,int src,int dest)
 	while(bottleneck=BFS(parent,residual,src,dest))
 	{
 		augment(parent,residual,original,bottleneck,dest);
-		/*for(int i=0;i<v_count;++i)
-		{
-			for(auto x:original.vertex[i].flow)
-			{
-				cout<<i<<","<<x.second<<","<<x.first<<" ";
-			}
-			cout<<"\n";
-		}*/
 		makeResidualGraph(original,residual);
-		/*for(int i=0;i<v_count;++i)
-		{
-			for(auto x:residual.vertex[i].capacity)
-			{
-				cout<<i<<","<<x.second<<","<<x.first<<" ";
-			}
-			cout<<"\n";
-		}
-		cout<<"\n";
-		for(int i=0;i<v_count;++i)
-		{
-			for(auto x:residual.vertex[i].flow)
-			{
-				cout<<i<<","<<x.second<<","<<x.first<<" ";
-			}
-			cout<<"\n";
-		}*/
 		init(parent); // initialize parent b4 every BFS call
 	}
 }
-
+/**
+ * This is an used by minCut function to check which nodes are visited and which are not visited. 
+ */
 unordered_map<int,bool> visited;
+/**
+ * \brief does dfs to find the all the nodes which are reachable from source
+ * \param residual Graph after Ford Fulkerson Algorith is completed, current vertex index at which dfs is running
+ */
 
 void minCut(Graph& residual,int current)
 {
-    cout<<"minCut function enteree current is"<<" ";
     cout<<current<<endl;
     visited[current]=true;
     vector<pair<int,int>> forwards=residual.vertex[current].capacity;
     vector<pair<int,int>> backwards=residual.vertex[current].flow;
     for(int i=0;i<forwards.size();i++)
     {
-        if(!visited[forwards[i].first] && forwards[i].second>0)
-            minCut(residual,forwards[i].first);
+        if(!visited[forwards[i].first] && forwards[i].second>0)	// if there is a forward edge from current vertex and it is not visited previously
+            minCut(residual,forwards[i].first);					// then take path along that vertex
     }
 
     for(int i=0;i<backwards.size();i++)
     {
-        if(!visited[backwards[i].first] && backwards[i].second>0)
-            minCut(residual,backwards[i].first);
+        if(!visited[backwards[i].first] && backwards[i].second>0)	// if there is a backward edge from current vertex and it is not visited previously
+            minCut(residual,backwards[i].first);					// then take path along that vertex
     }
     
 }
@@ -377,18 +357,17 @@ int main(int argc, char *argv[])
             visited[i]=false;
         minCut(residual,src);
         cout<<"minCut function exited"<<endl;
-        for(int i=0;i<v_count;i++)
-        {
-            cout<<"visited["<<i<<"] :"<<visited[i]<<endl;
+        for(int i=0;i<v_count;i++)	//this is for getting the original vertices from the indices we have in 'visited' 
+        {							//and also partitioning them into partA and partB
             auto it=Map.begin();
             while(it!=Map.end())
             {
                 if(it->second==i)
                 {
                     if(visited[i]==true)
-                        partA.push_back(it->first);
+                        partA.push_back(it->first);	//vertices which are visited in dfs from src will be in partA
                     else
-                        partB.push_back(it->first);
+                        partB.push_back(it->first);	//vertices which are not visited in dfs from src will be in partB
                 }
                 it++;
             }
