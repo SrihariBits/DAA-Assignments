@@ -328,7 +328,7 @@ int main(int argc, char *argv[])
             
             isSource[Map[vertex_b]]=false;
         }
-        
+	}
 		int src,dest;
 		for(int i=0;i<v_count;++i) // Destination has no outgoing edges
 		{
@@ -355,7 +355,7 @@ int main(int argc, char *argv[])
 			max_flow+=v.second;
 		}
 		cout<<"\nMAX FLOW :"<<max_flow;
-    }
+    
     return 0;
 }
 

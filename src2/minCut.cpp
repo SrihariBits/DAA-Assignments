@@ -8,6 +8,7 @@
 #include<bits/stdc++.h>
 #include "FordFulkerson.h"
 using namespace std;
+map<unsigned long long,unsigned long long> Map; /**< Map of vertex to its index */
 vector<int> partA,partB;	//Two vectors to store the vertices partitioned into two sets for mincut
 unordered_map<int,bool> visited;	//used in function minCut for knowing which vertices are visited already and which are not
 /**
@@ -57,6 +58,7 @@ int main(int argc, char *argv[])
     {
         ifstream fin;
         fin.open(argv[1]);
+		cout<<"file open";
         string line;
         stringstream ss;
         unsigned long long vertex_a,vertex_b,cap;
@@ -111,7 +113,7 @@ int main(int argc, char *argv[])
             
             isSource[Map[vertex_b]]=false;
         }
-        
+	}
 		int src,dest;
 		for(int i=0;i<v_count;++i) // Destination has no outgoing edges
 		{
@@ -158,7 +160,6 @@ int main(int argc, char *argv[])
         for(int x:partB)
             cout<<x<<" ";
         cout<<endl;
-    }
     return 0;
 }
 

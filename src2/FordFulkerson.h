@@ -31,7 +31,6 @@ struct node
 unsigned long long  v_count, /**< Vertex count */
                     e_count; /**< Edge count */
 
-map<unsigned long long,unsigned long long> Map; /**< Map of vertex to its index */
 /**
  * \class Graph
  * \brief Class to represent the input graph
@@ -218,7 +217,6 @@ void Max_Flow(Graph& original,Graph& residual,int src,int dest)
 	int bottleneck;
 	vector<pair<int,int>> parent(v_count);
 	init(parent);
-	cout<<"Max-Flow\n";
 	while(bottleneck=BFS(parent,residual,src,dest))
 	{
 		augment(parent,residual,original,bottleneck,dest);
