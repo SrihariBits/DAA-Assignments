@@ -1,0 +1,12 @@
+SMALLER
+1 http://konect.uni-koblenz.de/networks/brunson_corporate-leadership
+2 http://konect.uni-koblenz.de/networks/moreno_crime
+3 http://konect.uni-koblenz.de/networks/opsahl-southernwomen
+4 http://konect.uni-koblenz.de/networks/brunson_southern-women
+5 http://konect.uni-koblenz.de/networks/brunson_south-africa
+
+LARGER
+1 http://konect.uni-koblenz.de/networks/prosper-watch
+2 http://konect.uni-koblenz.de/networks/bookcrossing_full-rating
+3 http://konect.uni-koblenz.de/networks/dbpedia-genre
+4 http://konect.uni-koblenz.de/networks/github
