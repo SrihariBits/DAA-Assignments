@@ -38,8 +38,10 @@ int main(int argc, char *argv[])
         string line;
         stringstream ss;
         unsigned long long vertex_a,vertex_b;
+		int count=0;
         while (fin) 
 		{
+			cout<<(++count)<<" ";
             getline(fin, line);
             ss << line <<"\n";
             ss >> vertex_a >> vertex_b;
@@ -73,6 +75,7 @@ int main(int argc, char *argv[])
             residual.vertex[Map2[vertex_b]].flow.push_back({Map1[vertex_a],0}); //for backward edges			
        }
         fin.close();
+		cout<<"input take done";
     }
 	// input from terminal if file is not given in arguments
     else
@@ -109,9 +112,11 @@ int main(int argc, char *argv[])
             residual.vertex[Map1[vertex_a]].capacity.push_back({Map2[vertex_b],1});
             residual.vertex[Map2[vertex_b]].flow.push_back({Map1[vertex_a],0});//for backward edge
         }
+		cout<<"Input taken\n";
 	}
 	
 	Max_Flow(original,residual,src,dest);
+	cout<<"\nMaxflow done\n";
 	vector<pair<int,int>> maximumMatching;
 	vector<pair<int,int>> maxMatch;
 	vector<pair<int,int>> leftNodes=original.vertex[src].capacity;
@@ -124,48 +129,42 @@ int main(int argc, char *argv[])
 			if(rightneighbours[j].second>0)
 			{
 				maximumMatching.push_back({left,rightneighbours[j].first});
+				cout<<left<<" "<<rightneighbours[j].first<<"  ";
 			}
 		}
 	}
-
+	cout<<"\nfound all edges \n";
 	for(int i=0;i<maximumMatching.size();i++)	// This is for finding the original vertices from the indices we have
 	{
+		cout<<"found one edge original vertices  ";
 		int a=maximumMatching[i].first,b=maximumMatching[i].second;
-		int aa,bb;
-		for(int i=0;i<v_count1;i++) 
-		{							
-			auto it=Map1.begin();
-			while(it!=Map1.end())
+		int aOriginal,bOriginal;					
+		auto it=Map1.begin();
+		while(it!=Map1.end())
+		{
+			if(it->second==a)
 			{
-				if(it->second==a)
-				{
-					aa=it->first;
-					break;
-				}
-				it++;
+				aOriginal=it->first;
+				break;
 			}
-		}
-
-		for(int i=0;i<v_count2;i++) 
-		{							
-			auto it=Map2.begin();
-			while(it!=Map2.end())
+			it++;
+		}					
+		it=Map2.begin();
+		while(it!=Map2.end())
+		{
+			if(it->second==b)
 			{
-				if(it->second==b)
-				{
-					bb=it->first;
-					break;
-				}
-				it++;
+				bOriginal=it->first;
+				break;
 			}
+			it++;
 		}
-		
-		maxMatch.push_back({aa,bb});
+		maxMatch.push_back({aOriginal,bOriginal});
 	}
 
 	cout<<"Maximum Matching"<<endl;
 	for(int i=0;i<maxMatch.size();i++)
-		cout<<maxMatch[i].first<< " "<<maxMatch[i].second<<endl;
+		cout<<maxMatch[i].first<< " "<<maxMatch[i].second<<"--";
         
     return 0;
 }
