@@ -166,5 +166,6 @@ int main(int argc, char *argv[])
 	for(int i=0;i<maxMatch.size();i++)
 		cout<<maxMatch[i].first<< " "<<maxMatch[i].second<<"--";
         
+	cout<<"\nedges :"<<maxMatch.size()<<endl;
     return 0;
 }

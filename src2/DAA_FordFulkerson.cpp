@@ -152,7 +152,7 @@ void makeResidualGraph(Graph& original, Graph& residual)
 			{
 				residual.vertex[i].capacity[j].second=(original.vertex[i].capacity[j].second-original.vertex[i].flow[j].second);
 			}
-			if(original.vertex[i].flow[j].second>0) //find the reverse edge and update it
+			if(original.vertex[i].flow[j].second>=0) //find the reverse edge and update it
 			{
 				int neighbour=original.vertex[i].flow[j].first;
 				for(int k=0;k<residual.vertex[neighbour].flow.size();++k)
