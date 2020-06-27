@@ -1,0 +1,19 @@
+\hypertarget{struct_node}{}\doxysection{Node Struct Reference}
+\label{struct_node}\index{Node@{Node}}
+
+
+Store the edge lists of the input graphs This struct stores the edge list of a node/vertex in the graph as a vector of pairs of integers. Each vertex has two types of edges namely capacity and flow. For original graph these vectors mean what the name suggests. For the residual graph, capacity represents residual capacity of the forward edge while flow represents the residual capacity of the reverse edge (not a part of original graph). Note that residual graph has no flow term hence this optimal use is encouraged. Of the pair of integers, (capacity/flow).first represents the other vertex which connects to this edge and (capacity/flow).second represents the value of (capacity/flow) passing through that edge.  
+
+
+
+
+{\ttfamily \#include $<$Ford\+Fulkerson.\+h$>$}
+
+
+
+\doxysubsection{Detailed Description}
+Store the edge lists of the input graphs This struct stores the edge list of a node/vertex in the graph as a vector of pairs of integers. Each vertex has two types of edges namely capacity and flow. For original graph these vectors mean what the name suggests. For the residual graph, capacity represents residual capacity of the forward edge while flow represents the residual capacity of the reverse edge (not a part of original graph). Note that residual graph has no flow term hence this optimal use is encouraged. Of the pair of integers, (capacity/flow).first represents the other vertex which connects to this edge and (capacity/flow).second represents the value of (capacity/flow) passing through that edge. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/\+S\+T\+A\+S\+H/@\+R\+I\+K\+I\+L/\+\_\+\+Projects/@programming/@\+Acad/\+D\+A\+A/\+Github/src2/\mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp}{D\+A\+A\+\_\+\+Ford\+Fulkerson.\+cpp}}\end{DoxyCompactItemize}

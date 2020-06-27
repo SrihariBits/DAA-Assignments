@@ -1,0 +1,94 @@
+\hypertarget{min_cut_8cpp}{}\doxysection{/mnt/\+S\+T\+A\+S\+H/@R\+I\+K\+I\+L/\+\_\+\+Projects/@programming/@Acad/\+D\+A\+A/\+Github/src2/min\+Cut.cpp File Reference}
+\label{min_cut_8cpp}\index{/mnt/STASH/"@RIKIL/\_Projects/"@programming/"@Acad/DAA/Github/src2/minCut.cpp@{/mnt/STASH/"@RIKIL/\_Projects/"@programming/"@Acad/DAA/Github/src2/minCut.cpp}}
+
+
+This file contains the implementation for finding mincut of a directed graph.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Ford\+Fulkerson.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{min_cut_8cpp_aa3081da0f12fb67fd111bf255f230844}{min\+Cut}} (\mbox{\hyperlink{class_graph}{Graph}} \&residual, int current)
+\begin{DoxyCompactList}\small\item\em does dfs to find the all the nodes which are reachable from source \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{min_cut_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em main function to start the algorithm, takes file path as command line argument \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ unsigned long long, unsigned long long $>$ \mbox{\hyperlink{min_cut_8cpp_aa6d4d438800b80642674c88f4807093f}{Map}}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{min_cut_8cpp_a8ac9ce829922bae3ef441a50205af89e}{partA}}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{min_cut_8cpp_a5018fe50da5b8a39381e435e9fe62407}{partB}}
+\item 
+unordered\+\_\+map$<$ int, bool $>$ \mbox{\hyperlink{min_cut_8cpp_a2bc32c48d9fcd5206d85909950e79284}{visited}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation for finding mincut of a directed graph. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{min_cut_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{min_cut_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{minCut.cpp@{minCut.cpp}!main@{main}}
+\index{main@{main}!minCut.cpp@{minCut.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+main function to start the algorithm, takes file path as command line argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & no of command line arguments \\
+\hline
+{\em argv} & list of command line arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{min_cut_8cpp_aa3081da0f12fb67fd111bf255f230844}\label{min_cut_8cpp_aa3081da0f12fb67fd111bf255f230844}} 
+\index{minCut.cpp@{minCut.cpp}!minCut@{minCut}}
+\index{minCut@{minCut}!minCut.cpp@{minCut.cpp}}
+\doxysubsubsection{\texorpdfstring{minCut()}{minCut()}}
+{\footnotesize\ttfamily void min\+Cut (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{residual,  }\item[{int}]{current }\end{DoxyParamCaption})}
+
+
+
+does dfs to find the all the nodes which are reachable from source 
+
+
+\begin{DoxyParams}{Parameters}
+{\em residual} & \mbox{\hyperlink{class_graph}{Graph}} after Ford Fulkerson Algorith is completed, current vertex index at which dfs is running \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{min_cut_8cpp_aa6d4d438800b80642674c88f4807093f}\label{min_cut_8cpp_aa6d4d438800b80642674c88f4807093f}} 
+\index{minCut.cpp@{minCut.cpp}!Map@{Map}}
+\index{Map@{Map}!minCut.cpp@{minCut.cpp}}
+\doxysubsubsection{\texorpdfstring{Map}{Map}}
+{\footnotesize\ttfamily map$<$unsigned long long,unsigned long long$>$ Map}
+
+Map of vertex to its index \mbox{\Hypertarget{min_cut_8cpp_a8ac9ce829922bae3ef441a50205af89e}\label{min_cut_8cpp_a8ac9ce829922bae3ef441a50205af89e}} 
+\index{minCut.cpp@{minCut.cpp}!partA@{partA}}
+\index{partA@{partA}!minCut.cpp@{minCut.cpp}}
+\doxysubsubsection{\texorpdfstring{partA}{partA}}
+{\footnotesize\ttfamily vector$<$int$>$ partA}
+
+\mbox{\Hypertarget{min_cut_8cpp_a5018fe50da5b8a39381e435e9fe62407}\label{min_cut_8cpp_a5018fe50da5b8a39381e435e9fe62407}} 
+\index{minCut.cpp@{minCut.cpp}!partB@{partB}}
+\index{partB@{partB}!minCut.cpp@{minCut.cpp}}
+\doxysubsubsection{\texorpdfstring{partB}{partB}}
+{\footnotesize\ttfamily vector$<$int$>$ partB}
+
+\mbox{\Hypertarget{min_cut_8cpp_a2bc32c48d9fcd5206d85909950e79284}\label{min_cut_8cpp_a2bc32c48d9fcd5206d85909950e79284}} 
+\index{minCut.cpp@{minCut.cpp}!visited@{visited}}
+\index{visited@{visited}!minCut.cpp@{minCut.cpp}}
+\doxysubsubsection{\texorpdfstring{visited}{visited}}
+{\footnotesize\ttfamily unordered\+\_\+map$<$int,bool$>$ visited}
+

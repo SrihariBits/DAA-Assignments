@@ -1,0 +1,77 @@
+\hypertarget{bipartite_matching_8cpp}{}\doxysection{/mnt/\+S\+T\+A\+S\+H/@R\+I\+K\+I\+L/\+\_\+\+Projects/@programming/@Acad/\+D\+A\+A/\+Github/src2/bipartite\+Matching.cpp File Reference}
+\label{bipartite_matching_8cpp}\index{/mnt/STASH/"@RIKIL/\_Projects/"@programming/"@Acad/DAA/Github/src2/bipartiteMatching.cpp@{/mnt/STASH/"@RIKIL/\_Projects/"@programming/"@Acad/DAA/Github/src2/bipartiteMatching.cpp}}
+
+
+This file contains the implementation for finding solution to the maximum bipartite matching problem.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Ford\+Fulkerson.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{bipartite_matching_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em main function to start the algorithm, takes file path as command line argument \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \mbox{\hyperlink{bipartite_matching_8cpp_a7aacc081999f4e748b9332930063c21a}{v\+\_\+count1}}
+\item 
+unsigned long long \mbox{\hyperlink{bipartite_matching_8cpp_a503540226b2d6e5917a9c8edf38f9dfa}{v\+\_\+count2}}
+\item 
+map$<$ unsigned long long, unsigned long long $>$ \mbox{\hyperlink{bipartite_matching_8cpp_ac9b2fda47683597a8094e1839a069d1d}{Map1}}
+\item 
+map$<$ unsigned long long, unsigned long long $>$ \mbox{\hyperlink{bipartite_matching_8cpp_a81ff492c61516f22f6c68c0d6d0acba0}{Map2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation for finding solution to the maximum bipartite matching problem. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bipartite_matching_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{bipartite_matching_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{bipartiteMatching.cpp@{bipartiteMatching.cpp}!main@{main}}
+\index{main@{main}!bipartiteMatching.cpp@{bipartiteMatching.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+main function to start the algorithm, takes file path as command line argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & no of command line arguments \\
+\hline
+{\em argv} & list of command line arguments \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{bipartite_matching_8cpp_ac9b2fda47683597a8094e1839a069d1d}\label{bipartite_matching_8cpp_ac9b2fda47683597a8094e1839a069d1d}} 
+\index{bipartiteMatching.cpp@{bipartiteMatching.cpp}!Map1@{Map1}}
+\index{Map1@{Map1}!bipartiteMatching.cpp@{bipartiteMatching.cpp}}
+\doxysubsubsection{\texorpdfstring{Map1}{Map1}}
+{\footnotesize\ttfamily map$<$unsigned long long,unsigned long long$>$ Map1}
+
+Map of vertex to its index \mbox{\Hypertarget{bipartite_matching_8cpp_a81ff492c61516f22f6c68c0d6d0acba0}\label{bipartite_matching_8cpp_a81ff492c61516f22f6c68c0d6d0acba0}} 
+\index{bipartiteMatching.cpp@{bipartiteMatching.cpp}!Map2@{Map2}}
+\index{Map2@{Map2}!bipartiteMatching.cpp@{bipartiteMatching.cpp}}
+\doxysubsubsection{\texorpdfstring{Map2}{Map2}}
+{\footnotesize\ttfamily map$<$unsigned long long,unsigned long long$>$ Map2}
+
+\mbox{\Hypertarget{bipartite_matching_8cpp_a7aacc081999f4e748b9332930063c21a}\label{bipartite_matching_8cpp_a7aacc081999f4e748b9332930063c21a}} 
+\index{bipartiteMatching.cpp@{bipartiteMatching.cpp}!v\_count1@{v\_count1}}
+\index{v\_count1@{v\_count1}!bipartiteMatching.cpp@{bipartiteMatching.cpp}}
+\doxysubsubsection{\texorpdfstring{v\_count1}{v\_count1}}
+{\footnotesize\ttfamily unsigned long long v\+\_\+count1}
+
+\mbox{\Hypertarget{bipartite_matching_8cpp_a503540226b2d6e5917a9c8edf38f9dfa}\label{bipartite_matching_8cpp_a503540226b2d6e5917a9c8edf38f9dfa}} 
+\index{bipartiteMatching.cpp@{bipartiteMatching.cpp}!v\_count2@{v\_count2}}
+\index{v\_count2@{v\_count2}!bipartiteMatching.cpp@{bipartiteMatching.cpp}}
+\doxysubsubsection{\texorpdfstring{v\_count2}{v\_count2}}
+{\footnotesize\ttfamily unsigned long long v\+\_\+count2}
+

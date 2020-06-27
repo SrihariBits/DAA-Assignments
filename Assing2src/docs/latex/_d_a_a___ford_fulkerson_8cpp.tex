@@ -1,0 +1,128 @@
+\hypertarget{_d_a_a___ford_fulkerson_8cpp}{}\doxysection{/mnt/\+S\+T\+A\+S\+H/@R\+I\+K\+I\+L/\+\_\+\+Projects/@programming/@Acad/\+D\+A\+A/\+Github/src2/\+D\+A\+A\+\_\+\+Ford\+Fulkerson.cpp File Reference}
+\label{_d_a_a___ford_fulkerson_8cpp}\index{/mnt/STASH/"@RIKIL/\_Projects/"@programming/"@Acad/DAA/Github/src2/DAA\_FordFulkerson.cpp@{/mnt/STASH/"@RIKIL/\_Projects/"@programming/"@Acad/DAA/Github/src2/DAA\_FordFulkerson.cpp}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnode}{node}}
+\item 
+class \mbox{\hyperlink{class_graph}{Graph}}
+\begin{DoxyCompactList}\small\item\em Class to represent the input graph Since this is a rip off code of D\+AA assignment 1,this was retained. Might have as well been a struct. Will try to add outside functions into this class if I have time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_a77988da40e9a35da51ea0e8943ebbd4a}{R\+O\+OT}}~I\+N\+T\+\_\+\+M\+IN
+\item 
+\#define \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_ac5e53f242a9c7613a7499cfc28fdb607}{U\+N\+V\+I\+S\+I\+T\+ED}}~I\+N\+T\+\_\+\+M\+AX
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_a13e8cb27bb83f7840c1b00b971f0025b}{init}} (vector$<$ pair$<$ int, int $>$$>$ \&parent)
+\item 
+int \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_ae63542166a9319801c8d5577affa01a8}{B\+FS}} (vector$<$ pair$<$ int, int $>$$>$ \&parent, \mbox{\hyperlink{class_graph}{Graph}} \&residual, int src, int dest)
+\item 
+void \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_a6af7281fb3be5cf1c4cd6d609afa07d4}{make\+Residual\+Graph}} (\mbox{\hyperlink{class_graph}{Graph}} \&original, \mbox{\hyperlink{class_graph}{Graph}} \&residual)
+\item 
+void \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_aba6a7f2d1d956b6023cc76c8248a8aa6}{augment}} (vector$<$ pair$<$ int, int $>$$>$ \&parent, \mbox{\hyperlink{class_graph}{Graph}} \&residual, \mbox{\hyperlink{class_graph}{Graph}} \&original, int bottleneck, int dest)
+\item 
+void \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_ab876d0da58849b6675d59a05a681305d}{Max\+\_\+\+Flow}} (\mbox{\hyperlink{class_graph}{Graph}} \&original, \mbox{\hyperlink{class_graph}{Graph}} \&residual, int src, int dest)
+\item 
+int \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em main function to start the algorithm, takes file path as command line argument \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_a11b258169d1b950c545b8d446ca07990}{v\+\_\+count}}
+\item 
+unsigned long long \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_ad2d9ad15a9a331194bc5f982e4fc0edf}{e\+\_\+count}}
+\item 
+map$<$ unsigned long long, unsigned long long $>$ \mbox{\hyperlink{_d_a_a___ford_fulkerson_8cpp_aa6d4d438800b80642674c88f4807093f}{Map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_a77988da40e9a35da51ea0e8943ebbd4a}\label{_d_a_a___ford_fulkerson_8cpp_a77988da40e9a35da51ea0e8943ebbd4a}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!ROOT@{ROOT}}
+\index{ROOT@{ROOT}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{ROOT}{ROOT}}
+{\footnotesize\ttfamily \#define R\+O\+OT~I\+N\+T\+\_\+\+M\+IN}
+
+\mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_ac5e53f242a9c7613a7499cfc28fdb607}\label{_d_a_a___ford_fulkerson_8cpp_ac5e53f242a9c7613a7499cfc28fdb607}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!UNVISITED@{UNVISITED}}
+\index{UNVISITED@{UNVISITED}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{UNVISITED}{UNVISITED}}
+{\footnotesize\ttfamily \#define U\+N\+V\+I\+S\+I\+T\+ED~I\+N\+T\+\_\+\+M\+AX}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_aba6a7f2d1d956b6023cc76c8248a8aa6}\label{_d_a_a___ford_fulkerson_8cpp_aba6a7f2d1d956b6023cc76c8248a8aa6}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!augment@{augment}}
+\index{augment@{augment}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{augment()}{augment()}}
+{\footnotesize\ttfamily void augment (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ int, int $>$$>$ \&}]{parent,  }\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{residual,  }\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{original,  }\item[{int}]{bottleneck,  }\item[{int}]{dest }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_ae63542166a9319801c8d5577affa01a8}\label{_d_a_a___ford_fulkerson_8cpp_ae63542166a9319801c8d5577affa01a8}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!BFS@{BFS}}
+\index{BFS@{BFS}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{BFS()}{BFS()}}
+{\footnotesize\ttfamily int B\+FS (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ int, int $>$$>$ \&}]{parent,  }\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{residual,  }\item[{int}]{src,  }\item[{int}]{dest }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_a13e8cb27bb83f7840c1b00b971f0025b}\label{_d_a_a___ford_fulkerson_8cpp_a13e8cb27bb83f7840c1b00b971f0025b}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!init@{init}}
+\index{init@{init}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void init (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ int, int $>$$>$ \&}]{parent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{_d_a_a___ford_fulkerson_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!main@{main}}
+\index{main@{main}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+main function to start the algorithm, takes file path as command line argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & no of command line arguments \\
+\hline
+{\em argv} & list of command line arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_a6af7281fb3be5cf1c4cd6d609afa07d4}\label{_d_a_a___ford_fulkerson_8cpp_a6af7281fb3be5cf1c4cd6d609afa07d4}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!makeResidualGraph@{makeResidualGraph}}
+\index{makeResidualGraph@{makeResidualGraph}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{makeResidualGraph()}{makeResidualGraph()}}
+{\footnotesize\ttfamily void make\+Residual\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{original,  }\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{residual }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_ab876d0da58849b6675d59a05a681305d}\label{_d_a_a___ford_fulkerson_8cpp_ab876d0da58849b6675d59a05a681305d}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!Max\_Flow@{Max\_Flow}}
+\index{Max\_Flow@{Max\_Flow}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{Max\_Flow()}{Max\_Flow()}}
+{\footnotesize\ttfamily void Max\+\_\+\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{original,  }\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{residual,  }\item[{int}]{src,  }\item[{int}]{dest }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_ad2d9ad15a9a331194bc5f982e4fc0edf}\label{_d_a_a___ford_fulkerson_8cpp_ad2d9ad15a9a331194bc5f982e4fc0edf}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!e\_count@{e\_count}}
+\index{e\_count@{e\_count}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{e\_count}{e\_count}}
+{\footnotesize\ttfamily unsigned long long e\+\_\+count}
+
+Edge count \mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_aa6d4d438800b80642674c88f4807093f}\label{_d_a_a___ford_fulkerson_8cpp_aa6d4d438800b80642674c88f4807093f}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!Map@{Map}}
+\index{Map@{Map}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{Map}{Map}}
+{\footnotesize\ttfamily map$<$unsigned long long,unsigned long long$>$ Map}
+
+Map of vertex to its index \mbox{\Hypertarget{_d_a_a___ford_fulkerson_8cpp_a11b258169d1b950c545b8d446ca07990}\label{_d_a_a___ford_fulkerson_8cpp_a11b258169d1b950c545b8d446ca07990}} 
+\index{DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}!v\_count@{v\_count}}
+\index{v\_count@{v\_count}!DAA\_FordFulkerson.cpp@{DAA\_FordFulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{v\_count}{v\_count}}
+{\footnotesize\ttfamily unsigned long long v\+\_\+count}
+
+Vertex count 
