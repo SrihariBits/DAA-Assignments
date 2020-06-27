@@ -78,4 +78,4 @@ Root Directory
  - T Naga Sai Bharath - 2017A7PS0209H
  - Rikil Gajarla - 2017A7PS0202H
 
-Repo Link: [https://github.com/SrihariBits/DAA_assignment1](https://github.com/SrihariBits/DAA_assignment1)
+Repo Link: [https://github.com/SrihariBits/DAA-Assignments.git](https://github.com/SrihariBits/DAA_assignment1)
