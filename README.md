@@ -32,8 +32,8 @@ Dependencies required to compile the code
  
 1. Clone the DAA_assignment1
 ```sh
-git clone https://github.com/SrihariBits/DAA_assignment1.git
-cd DAA_assignment1
+git clone https://github.com/SrihariBits/DAA-Assignments.git
+cd DAA-Assignments
 ```
 2. Go to the required directory (assignment 1 or 2)
 ```sh
